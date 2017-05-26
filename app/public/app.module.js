@@ -1,3 +1,3 @@
 (function(){
-  angular.module('reddit', ['ui.router'])
+  angular.module('reddit', ['ui.router', 'angularMoment'])
 })()

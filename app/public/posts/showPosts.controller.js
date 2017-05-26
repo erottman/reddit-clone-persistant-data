@@ -2,7 +2,7 @@
   angular.module('reddit')
     .controller('ShowPostsController', ShowPostsController)
 
-    function ShowPostsController($http) {
+    function ShowPostsController($http, moment) {
       const vm = this
       console.log("this controller is working");
 

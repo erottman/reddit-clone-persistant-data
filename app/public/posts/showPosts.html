@@ -1,6 +1,6 @@
 
   <div class="pull-right">
-    <p><a class="btn btn-info">New Post</a></p>
+    <p><a class="btn btn-info" ui-sref='addPost'>New Post</a></p>
   </div>
 
   <ul class="nav nav-pills">
@@ -19,7 +19,7 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="well" ng-repeat='post in $ctrl.posts'>
+    <div class="well" ng-repeat='post in $ctrl.posts | orderBy: "-vote_count"'>
       <div class="media-left">
         <img class="media-object" ng-src={{post.image_url}}>
       </div>
@@ -38,7 +38,8 @@
           {{post.body}}
         </p>
         <div>
-          Some time ago {{post.created_at}}
+          <span am-time-ago='post.created_at'></span>
+
           |
           <i class="glyphicon glyphicon-comment"></i>
           <a>

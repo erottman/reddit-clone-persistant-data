@@ -14,7 +14,13 @@
         url: '/',
         component: 'showPosts'
       })
-      
+      .state('addPost', {
+        url: '/new',
+        template: `Add new post`,
+        controller: function () {
+          console.log("add controller is working");
+        }
+      })
   }
 
 }());
