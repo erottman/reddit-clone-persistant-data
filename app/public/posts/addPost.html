@@ -1,19 +1,19 @@
      <form ng-submit='$ctrl.addPost()'>
        <div>
          <label for="title">Title</label>
-         <input ng-model='$ctrl.newPost.title' id="title" class="form-control">
+         <input ng-model='$ctrl.newPost.title' id="title" class="form-control" required>
        </div>
        <div>
          <label for="body">Body</label>
-         <textarea ng-model='$ctrl.newPost.body' id="body" class="form-control"></textarea>
+         <textarea ng-model='$ctrl.newPost.body' id="body" class="form-control" required></textarea>
        </div>
        <div>
          <label for="author">Author</label>
-         <input ng-model='$ctrl.newPost.author' id="author" class="form-control">
+         <input ng-model='$ctrl.newPost.author' id="author" class="form-control" required>
        </div>
        <div>
          <label for="image-url">Image URL</label>
-         <input ng-model='$ctrl.newPost.image_url' id="image-url" class="form-control">
+         <input ng-model='$ctrl.newPost.image_url' id="image-url" class="form-control" required>
        </div>
        <div class="form-group">
          <button type="submit" class="btn btn-primary">
