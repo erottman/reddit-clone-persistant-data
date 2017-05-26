@@ -5,13 +5,20 @@
 
   <ul class="nav nav-pills">
     <li role="presentation" class="active">
-      <input type="search" class="form-control input-sm search-form" placeholder="Filter">
+      <input ng-model='filter' type="search" class="form-control input-sm search-form" placeholder="Filter">
     </li>
     <div class="form-inline">
       <label for="sort">  Sort by </label>
-      <select class="form-control" id="sort">
-        <option>Some text</option>
-        <option>Some text</option>
+      <select ng-model='sortPosts' ng-init='sortPosts = "-created_at"' class="form-control" id="sort">
+        <option value="author">Author A - Z </option>
+        <option value="-author">Author Z - A </option>
+        <option value="-created_at">Newest</option>
+        <option value="created_at">Oldest</option>
+        <option value="title">Title A - Z </option>
+        <option value="-title">Title Z - A </option>
+        <option value="-vote_count">Votes Top </option>
+        <option value="vote_count">Votes Bottom </option>
+
       </select>
     </div>
   </ul>
@@ -19,7 +26,7 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="well" ng-repeat='post in $ctrl.posts | orderBy: "-vote_count"'>
+    <div class="well" ng-repeat='post in $ctrl.posts | orderBy: sortPosts | filter: {title: filter}'>
       <div class="media-left">
         <img class="media-object post_image" ng-src={{post.image_url}}>
       </div>
