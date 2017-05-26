@@ -42,7 +42,7 @@
           |
           <i class="glyphicon glyphicon-comment"></i>
           <a>
-            Some comments
+            <ng-pluralize count='post.comments.length' when="{'0': '0 comments', '1':'1 comment', 'other': '{} comments'}"></ng-pluralize>
           </a>
         </div>
         <div class="row">
