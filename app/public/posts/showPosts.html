@@ -27,8 +27,8 @@
         <h4 class="media-heading">
           {{post.title}}
           |
-          <a><i class="glyphicon glyphicon-arrow-up"></i></a>
-          <a><i class="glyphicon glyphicon-arrow-down"></i></a>
+          <a><i ng-click='$ctrl.upVote(post)' class="glyphicon glyphicon-arrow-up"></i></a>
+          <a><i  ng-click='$ctrl.downVote(post)' class="glyphicon glyphicon-arrow-down"></i></a>
           {{post.vote_count}}
         </h4>
         <div class="text-right">

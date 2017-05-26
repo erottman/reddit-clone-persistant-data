@@ -12,5 +12,29 @@
           vm.posts = res.data
         })
       }
+      vm.upVote = function (post) {
+        let upVoteUrl = '/api/posts/' + post.id + '/votes'
+        $http.post(upVoteUrl, post).then(res => {
+          console.log(res);
+          $http.get('/api/posts').then(res => {
+            console.log(res);
+            vm.posts = res.data
+          })
+        })
+      }
+
+      vm.downVote = function (post) {
+        let downVoteUrl = '/api/posts/' + post.id + '/votes'
+        if (post.vote_count >= 1 ) {
+          $http.delete(downVoteUrl, post).then(res => {
+            console.log(res);
+            $http.get('/api/posts').then(res => {
+              console.log(res);
+              vm.posts = res.data
+
+          })
+        })
+      }
     }
+  }
 })()
