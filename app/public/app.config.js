@@ -12,11 +12,9 @@
     $stateProvider
       .state('list', {
         url: '/',
-        template: `<h1>testing<h1>`,
-        controller: function () {
-          console.log("list ontroller is working");
-        }
+        component: 'showPosts'
       })
+      
   }
 
 }());
