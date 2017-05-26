@@ -21,7 +21,7 @@
 
     <div class="well" ng-repeat='post in $ctrl.posts | orderBy: "-vote_count"'>
       <div class="media-left">
-        <img class="media-object" ng-src={{post.image_url}}>
+        <img class="media-object post_image" ng-src={{post.image_url}}>
       </div>
       <div class="media-body">
         <h4 class="media-heading">
