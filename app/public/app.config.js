@@ -7,14 +7,15 @@
 
   function config($stateProvider, $urlRouterProvider, $locationProvider){
 
-    // this line is optional
-    // $locationProvider.html5Mode(true)
+    $locationProvider.html5Mode(true)
 
     $stateProvider
-      .state({
-        name: 'home',
+      .state('list', {
         url: '/',
-        component: 'app',
+        template: `<h1>testing<h1>`,
+        controller: function () {
+          console.log("list ontroller is working");
+        }
       })
   }
 
