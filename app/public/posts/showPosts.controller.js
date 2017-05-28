@@ -36,5 +36,14 @@
         })
       }
     }
+
+    vm.selected = -1
+    vm.setShowComments = function(id) {
+      vm.selected = id
+    }
+
+    vm.commentsOn = function(id) {
+      return vm.selected === id
+    }
   }
 })()
