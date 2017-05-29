@@ -52,24 +52,23 @@
           ng-hide='$ctrl.commentsOn($index)'>
             <ng-pluralize count='post.comments.length' when="{'0': '0 comments', '1':'1 comment', 'other': '{} comments'}"></ng-pluralize>
           </a>
-          <a ng-show='$ctrl.setShowComments($index)'
+          <a ng-show='$ctrl.commentsOn($index)'
           ng-click='$ctrl.setShowComments(-1)'>
             <ng-pluralize count='post.comments.length' when="{'1': 'Hide comment', 'other': 'Hide comments'}"></ng-pluralize>
           </a>
         </div>
         <div class="row" ng-show='$ctrl.commentsOn($index)'>
           <div class="col-md-offset-1">
-            <div ng-repeat='comment in post.comments'></div>
-              <div>
+            <div ng-repeat='comment in post.comments'>
                 {{comment.content}} --<span am-time-ago='comment.created_at'></span>
                 </div>
             <hr>
             <p>
               Add Comment
             </p>
-            <form class="form-inline">
+            <form  ng-submit='$ctrl.addComment(post.id)' class="form-inline">
               <div class="form-group">
-                <input class="form-control">
+                <input ng-model='$ctrl.newComment.content' class="form-control">
               </div>
               <div class="form-group">
                 <input type="submit" class="btn btn-primary">
