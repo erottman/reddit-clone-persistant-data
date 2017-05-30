@@ -18,6 +18,10 @@
         url: '/new',
         component: 'addPost'
       })
-  }
+      .state('editPost', {
+        url:'/posts/:id/edit',
+        component:'editPost'
 
+      })
+  }
 }());
